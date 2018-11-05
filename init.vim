@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'adoy/vim-php-refactoring-toolbox'
 
+Plug 'vim-scripts/a.vim'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
@@ -84,18 +85,18 @@ Plug 'mattn/emmet-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 
-Plug 'tokorom/clang_complete'
+
+Plug 'Shougo/deoplete-clangx'
+"Plug 'tokorom/clang_complete'
 
 
 Plug 'xolox/vim-session'
-
 
 
 "Plug 'idanarye/vim-merginal'
 
 "include c++ c objectivec
 Plug 'xaizek/vim-inccomplete'
-
 
 
 Plug 'autozimu/LanguageClient-neovim', {
@@ -106,19 +107,14 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'xolox/vim-misc'
 
 
-
 Plug 'junegunn/fzf'
 
-"Plug 'roxma/nvim-cm-php-language-server',  {'do': 'composer install && composer run-script parse-stubs'}
-
-Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
-
+"Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 
 
 "Plug 'starcraftman/vim-eclim'
 
-Plug 'StanAngeloff/php.vim'
-
+"Plug 'StanAngeloff/php.vim'
 
 
 
@@ -126,13 +122,9 @@ Plug 'StanAngeloff/php.vim'
 Plug 'yuttie/comfortable-motion.vim'
 
 
-
 Plug 'DougBeney/pickachu'
 
 Plug 'majutsushi/tagbar'
-
-
-
 
 
 Plug 'Valloric/MatchTagAlways'
@@ -140,11 +132,8 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'ryanoasis/vim-devicons'
 
 
-
 "para rezise los split con control mas flecha
 Plug 'talek/obvious-resize'
-
-
 
 
 "desactiva funciones pesadas para archivos grandes
@@ -152,7 +141,6 @@ Plug 'vim-scripts/LargeFile'
 
 
 Plug 'craigemery/vim-autotag'
-
 
 "para mejor vista de tb
 Plug 'fweep/vim-tabber'
@@ -227,8 +215,17 @@ Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 "Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 "Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
-Plug 'roxma/nvim-completion-manager'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
 Plug 'neomake/neomake'
+
+Plug 'christoomey/vim-system-copy'
+
+
+Plug 'ncm2/ncm2-go'
+"go get -u github.com/mdempsky/gocode
+
 
 " requires phpactor
 Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
@@ -268,7 +265,7 @@ call plug#end()
 set shell=bash\ -l
 
 
-" for echodoc
+
 set noshowmode
 
 
@@ -303,6 +300,7 @@ set hidden
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'cpp': ['clangd'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'java': ['java',
@@ -531,11 +529,18 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 "linea 80
+
 if exists('+colorcolumn')
-  set colorcolumn=120
+    autocmd InsertEnter * set colorcolumn=80
+  autocmd InsertLeave * set colorcolumn=""
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>120v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+
 endif
+
+
+
+
 let g:UltiSnipsEditSplit="vertical"
 
 
@@ -624,7 +629,11 @@ set t_Co=256
 set background=light
 colorscheme PaperColor
 
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
 
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -746,7 +755,7 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
-
+set title                   " Show the filename in the window title bar.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -985,9 +994,11 @@ endif
 
 set tabline=%!tabber#TabLine()
 
-
+let NERDTreeIgnore = ['\.o$']
 
 :au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 autocmd BufWinEnter,WinEnter term://* startinsert
 tnoremap <ESC> <C-\><C-n>:buffer #<CR>
+
+colorscheme PaperColor
 
