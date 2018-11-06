@@ -12,10 +12,10 @@ endfunction
 
 call plug#begin('~/.vim/plugged')
 
-
-Plug 'adoy/vim-php-refactoring-toolbox'
-
 Plug 'vim-scripts/a.vim'
+
+"Plug 'adoy/vim-php-refactoring-toolbox'
+
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
@@ -26,15 +26,15 @@ Plug 'luochen1990/rainbow'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}  
 
-Plug 'vim-scripts/dbext.vim'
+"Plug 'vim-scripts/dbext.vim'
 
-Plug 'yuratomo/gmail.vim'
+"Plug 'yuratomo/gmail.vim'
 
 Plug 'christoomey/vim-conflicted'
 
 "Plug 'lifepillar/vim-mucomplete'
 
-Plug 'joonty/vdebug'
+"Plug 'joonty/vdebug'
 
 "Plug 'megaannum/forms'
 
@@ -42,10 +42,13 @@ Plug 'joonty/vdebug'
 
 
 
+
+
+
 "jdb java debug
 "Plug 'Dica-Developer/vim-jdb'
 Plug 'LeonelSoriano/vimHttppie'
-Plug 'LeonelSoriano/vim-my-dbug'
+"Plug 'LeonelSoriano/vim-my-dbug'
 
 
 Plug 'chrisbra/colorizer'
@@ -82,11 +85,9 @@ Plug 'itchyny/calendar.vim'
 
 Plug 'mattn/emmet-vim'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 
-
-Plug 'Shougo/deoplete-clangx'
 "Plug 'tokorom/clang_complete'
 
 
@@ -96,7 +97,8 @@ Plug 'xolox/vim-session'
 "Plug 'idanarye/vim-merginal'
 
 "include c++ c objectivec
-Plug 'xaizek/vim-inccomplete'
+"Plug 'xaizek/vim-inccomplete'
+
 
 
 Plug 'autozimu/LanguageClient-neovim', {
@@ -107,9 +109,13 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'xolox/vim-misc'
 
 
+
 Plug 'junegunn/fzf'
 
+"Plug 'roxma/nvim-cm-php-language-server',  {'do': 'composer install && composer run-script parse-stubs'}
+
 "Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
+
 
 
 "Plug 'starcraftman/vim-eclim'
@@ -118,8 +124,10 @@ Plug 'junegunn/fzf'
 
 
 
+
 "moverse con scrool rapido y en smooth  C-f /C-u
 Plug 'yuttie/comfortable-motion.vim'
+
 
 
 Plug 'DougBeney/pickachu'
@@ -127,13 +135,19 @@ Plug 'DougBeney/pickachu'
 Plug 'majutsushi/tagbar'
 
 
+
+
+
 Plug 'Valloric/MatchTagAlways'
 
 Plug 'ryanoasis/vim-devicons'
 
 
+
 "para rezise los split con control mas flecha
 Plug 'talek/obvious-resize'
+
+
 
 
 "desactiva funciones pesadas para archivos grandes
@@ -141,6 +155,11 @@ Plug 'vim-scripts/LargeFile'
 
 
 Plug 'craigemery/vim-autotag'
+Plug 'xolox/vim-notes'
+
+Plug 'christoomey/vim-system-copy'
+
+
 
 "para mejor vista de tb
 Plug 'fweep/vim-tabber'
@@ -167,7 +186,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'ntpeters/vim-better-whitespace'
 
 
-Plug 'artur-shaik/vim-javacomplete2'
+"Plug 'artur-shaik/vim-javacomplete2'
 
 Plug 'pseewald/vim-anyfold'
 
@@ -180,6 +199,9 @@ Plug 'dracula/vim'
 
 Plug 'Shougo/echodoc.vim'
 
+Plug 'kshenoy/vim-signature'
+Plug 'andrewradev/splitjoin.vim'
+
 
 Plug 'freitass/todo.txt-vim'
 
@@ -190,14 +212,15 @@ Plug 'thaerkh/vim-indentguides'
 
 Plug 'jistr/vim-nerdtree-tabs'
 
-Plug 'mikelue/vim-maven-plugin'
-
+"Plug 'mikelue/vim-maven-plugin'
 
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'tpope/vim-fugitive'
 
 Plug 'thinca/vim-ref'
+
+"Plug 'ludovicchabant/vim-gutentags.git'
 
 
 Plug 'joegesualdo/jsdoc.vim'
@@ -211,26 +234,18 @@ Plug 'farfanoide/inflector.vim'
 
 Plug 'mikehaertl/pdv-standalone'
 
-Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+"Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 "Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 "Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+
 
 Plug 'neomake/neomake'
 
-Plug 'christoomey/vim-system-copy'
-
-
-Plug 'ncm2/ncm2-go'
-"go get -u github.com/mdempsky/gocode
-
-
 " requires phpactor
-Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
+"Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
 
-Plug 'roxma/ncm-phpactor'
+"Plug 'roxma/ncm-phpactor'
 
 
 Plug 'roxma/nvim-cm-tern', {'do': 'npm install'} "
@@ -241,6 +256,7 @@ Plug 'honza/vim-snippets'
 "abre archivos en la ultima posicion
 Plug 'farmergreg/vim-lastplace'
 
+Plug 'Yggdroot/indentLine'
 
 
 Plug 'leafgarland/typescript-vim'
@@ -253,24 +269,101 @@ Plug 'rakr/vim-two-firewatch'
 Plug 'mkarmona/materialbox'
 
 "php composer
-Plug 'noahfrederick/vim-composer'
+"Plug 'noahfrederick/vim-composer'
 
 "java refactory
 Plug 'apalmer1377/factorus'
 
+Plug 'chiel92/vim-autoformat'
+Plug 'sbdchd/neoformat'
 
 
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-tagprefix'
+Plug 'yuki-ycino/ncm2-dictionary'
+Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
+Plug 'ncm2/ncm2-gtags'
+"Plug 'jsfaint/gen_tags.vim'
+Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+Plug 'ncm2/ncm2-pyclang'
+Plug 'ncm2/ncm2-match-highlight'
+Plug 'ncm2/ncm2-snipmate'
+
+" snipmate dependencies
+Plug 'tomtom/tlib_vim'
+Plug 'marcweber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
 
 call plug#end()
+
+
+
+" Press enter key to trigger snippet expansion
+" The parameters are the same as `:help feedkeys()`
+inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+
+" c-j c-k for moving in snippet
+" let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
+let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+let g:UltiSnipsRemoveSelectModeMappings = 0
+
+    autocmd BufEnter * call ncm2#enable_for_buffer()
+    set completeopt=noinsert,menuone,noselect
+    set shortmess+=c
+
+    au TextChangedI * call ncm2#auto_trigger()
+
+    inoremap <c-c> <ESC>
+
+    inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+
+let g:ncm2#match_highlight = 'bold'
+let g:ncm2#match_highlight = 'sans-serif'
+let g:ncm2#match_highlight = 'sans-serif-bold'
+let g:ncm2#match_highlight = 'mono-space'
+
+" default
+let g:ncm2#match_highlight = 'double-struck'
+
+
+
+
+inoremap <silent> <expr> <CR> ncm2_snipmate#expand_or("\<CR>", 'n')
+
+" wrap <Plug>snipMateTrigger so that it works for both completin and normal
+" snippet
+" inoremap <expr> <c-u> ncm2_snipmate#expand_or("\<Plug>snipMateTrigger", "m")
+
+" c-j c-k for moving in snippet
+let g:snips_no_mappings = 1
+vmap <c-j> <Plug>snipMateNextOrTrigger
+vmap <c-k> <Plug>snipMateBack
+imap <expr> <c-k> pumvisible() ? "\<c-y>\<Plug>snipMateBack" : "\<Plug>snipMateBack"
+imap <expr> <c-j> pumvisible() ? "\<c-y>\<Plug>snipMateNextOrTrigger" : "\<Plug>snipMateNextOrTrigger"
+
+
+"""""""""""""""""""""""""""
+
+
+
+
+
+
+
 set shell=bash\ -l
+set clipboard=unnamedplus
 
+" for echodoc
+"set noshowmodegutentags
 
-
-set noshowmode
-
-
-let g:autotagmaxTagsFileSize=1024
-let g:autotagTagsFile=".tags"
 
 
 set termguicolors
@@ -281,8 +374,8 @@ set spelllang=en_us,es_es
 "nmap  :setlocal spell spelllang=es_es<cr>
 "nmap  :setlocal spell spelllang=en_en<cr>
 
-let g:dbext_default_profile_mySQLServer = 'type=MYSQL:user=root:passwd=123456:dbname=ritta_db'
-let g:dbext_default_profile = 'mySQLServer'
+"let g:dbext_default_profile_mySQLServer = 'type=MYSQL:user=root:passwd=123456:dbname=ritta_db'
+"let g:dbext_default_profile = 'mySQLServer'
 
 
 "autocmd VimEnter * DBCompleteTables
@@ -300,9 +393,8 @@ set hidden
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'cpp': ['clangd'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'javascript': ['/home/lsoriano/.nvm/versions/node/v8.11.3/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['/home/lsoriano/.nvm/versions/node/v8.11.3/bin/javascript-typescript-stdio'],
     \ 'java': ['java',
     \   '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044',
     \   '-Declipse.application=org.eclipse.jdt.ls.core.id1',
@@ -312,10 +404,16 @@ let g:LanguageClient_serverCommands = {
     \   '-Dlog.level=ALL',
     \   '-noverify',
     \   '-Xmx1G',
-    \   '-jar', '/home/leonel/languajeserve/jdt-language-server-latest/plugins/org.eclipse.equinox.launcher_1.4.0.v20161219-1356.jar',
-    \   '-configuration', '/home/leonel/languajeserve/jdt-language-server-latest/config_linux',
-    \   '-data', '/home/leonel/dev/tuten/ejemplo'],
+    \   '-jar', '/home/lsoriano/languaje/plugins/org.eclipse.equinox.launcher_1.4.0.v20161219-1356.jar',
+    \   '-configuration', '/home/lsoriano/languaje/config_linux',
+    \   '-data', '/home/lsoriano/dev/Lol'],
     \ }
+
+
+
+let g:LanguageClient_loggingFile = '/tmp/lc.log'
+let g:LanguageClient_loggingLevel = 'DEBUG'
+
 
 
 let g:indentguides_spacechar = '┆'
@@ -342,11 +440,11 @@ let g:auto_solarize_togglebg_key = '<F7>'
 
 highlight BookmarkSign ctermbg=NONE ctermfg=90
 "highlight BookmarkLine ctermbg=194 ctermfg=NONE
-let g:bookmark_sign = '☭'
+let g:bookmark_sign = '♦'
 let g:bookmark_highlight_lines = 0
 
 
-let g:searchtasks_list=["TODO", "FIXME", "XXX", "LEONEL"]
+let g:searchtasks_list=["TODO", "FIXME"]
 
 "let g:deoplete#enable_at_startup = 1
 
@@ -363,12 +461,12 @@ let g:searchtasks_list=["TODO", "FIXME", "XXX", "LEONEL"]
 "" Map leader to ,
 let mapleader='\'
 
-"let anyfold_activate=1
-"let anyfold_fold_comments=1
-"set foldlevel=3
+autocmd Filetype * AnyFoldActivate
 
-"let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-"let g:deoplete#ignore_sources.php = ['omni']
+let g:anyfold_fold_comments=1
+set foldlevel=0
+colorscheme solarized
+hi Folded term=NONE cterm=NONE
 
 
 
@@ -453,7 +551,7 @@ let g:gmail_smtp = 'smtp.gmail.com:465'
 
 let g:gmail_user_name = 'xxx@gmail.com'
 
-call gmail#imap#set_password('xxxxxx')
+"call gmail#imap#set_password('xxxxxx')
 
 
 let g:vdebug_options = {}
@@ -473,8 +571,8 @@ filetype plugin on
 filetype indent on
 
 
-nnoremap <C-K> :call PhpDocSingle()<CR>
-vnoremap <C-K> :call PhpDocRange()<CR>
+"nnoremap <C-K> :call PhpDocSingle()<CR>
+"vnoremap <C-K> :call PhpDocRange()<CR>
 
 
 
@@ -508,7 +606,7 @@ let g:neomake_message_sign = { 'text': "\uF09A", 'texthl': 'NeomakeMessageDefaul
 
 let g:neomake_javascript_enabled_makers = ['eslint']
 
-autocmd! BufWritePost,BufEnter * Neomake
+
 
 if has("persistent_undo")
     set undodir=~/.undodir/
@@ -529,18 +627,11 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 "linea 80
-
 if exists('+colorcolumn')
-    autocmd InsertEnter * set colorcolumn=80
-  autocmd InsertLeave * set colorcolumn=""
+  set colorcolumn=100
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>120v.\+', -1)
 endif
-
-
-
-
 let g:UltiSnipsEditSplit="vertical"
 
 
@@ -627,13 +718,9 @@ syntax enable
 "materialize claro para la noche
 set t_Co=256   
 set background=light
-colorscheme PaperColor
 
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
 
-" IMPORTANTE: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
+
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -745,6 +832,7 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
+set title                   " Show the filename in the window title bar.
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -755,7 +843,7 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
-set title                   " Show the filename in the window title bar.
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -906,7 +994,7 @@ endfunction
 
 
 "esto es para el plogin de tagbar
-nmap <F8> :TagbarToggle<CR>
+nmap <C-l> :TagbarToggle<CR>
 
 
 "este es para lo busqueda en archivos
@@ -968,6 +1056,12 @@ noremap <A-l> :wincmd l<cr>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
+
+" vim-airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
 if !exists('g:airline_powerline_fonts')
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -979,26 +1073,47 @@ if !exists('g:airline_powerline_fonts')
   let g:airline#extensions#readonly#symbol   = '⊘'
   let g:airline#extensions#linecolumn#prefix = '¶'
   let g:airline#extensions#paste#symbol      = 'ρ'
+  let g:airline_symbols.linenr    = '␊'
+  let g:airline_symbols.branch    = '⎇'
+  let g:airline_symbols.paste     = 'ρ'
+  let g:airline_symbols.paste     = 'Þ'
+  let g:airline_symbols.paste     = '∥'
+  let g:airline_symbols.whitespace = 'Ξ'
 else
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline_left_sep          = '▶'
-  let g:airline_left_alt_sep      = '»'
-  let g:airline_right_sep         = '◀'
-  let g:airline_right_alt_sep     = '«'
-  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-  let g:airline#extensions#readonly#symbol   = '⊘'
-  let g:airline#extensions#linecolumn#prefix = '¶'
-  let g:airline#extensions#paste#symbol      = 'ρ'
+  let g:airline#extensions#tabline#left_sep = ''
+  let g:airline#extensions#tabline#left_alt_sep = ''
+
+  " powerline symbols
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.readonly = ''
+  let g:airline_symbols.linenr = ''
 endif
 
 set tabline=%!tabber#TabLine()
 
-let NERDTreeIgnore = ['\.o$']
+
 
 :au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 autocmd BufWinEnter,WinEnter term://* startinsert
 tnoremap <ESC> <C-\><C-n>:buffer #<CR>
 
-colorscheme PaperColor
+set encoding=UTF-8
+
+colors PaperColor
+
+set cursorline 
+
+let g:tern_show_signature_in_pum = 1
+let g:tern_show_argument_hints = 'on_move'
+
+nno <silent> [of :<c-u>call <sid>open_folds('enable')<cr>
+nno <silent> ]of :<c-u>call <sid>open_folds('disable')<cr>
+nno <silent> cof :<c-u>call <sid>open_folds(<sid>open_folds('is_active') ? 'disable' : 'enable')<cr>
+
+
+
 
