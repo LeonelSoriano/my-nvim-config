@@ -101,20 +101,16 @@ Plug 'xolox/vim-session'
 
 
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': './install.sh',
-    \ }
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': './install.sh',
+"    \ }
 
 Plug 'xolox/vim-misc'
 
 
 
 Plug 'junegunn/fzf'
-
-"Plug 'roxma/nvim-cm-php-language-server',  {'do': 'composer install && composer run-script parse-stubs'}
-
-"Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 
 
 
@@ -162,7 +158,7 @@ Plug 'christoomey/vim-system-copy'
 
 
 "para mejor vista de tb
-Plug 'fweep/vim-tabber'
+"Plug 'fweep/vim-tabber'
 
 
 Plug 'airblade/vim-gitgutter'
@@ -188,7 +184,7 @@ Plug 'ntpeters/vim-better-whitespace'
 
 "Plug 'artur-shaik/vim-javacomplete2'
 
-Plug 'pseewald/vim-anyfold'
+"Plug 'pseewald/vim-anyfold'
 
 Plug 'mbbill/undotree'
 
@@ -240,15 +236,13 @@ Plug 'mikehaertl/pdv-standalone'
 
 
 
-Plug 'neomake/neomake'
-
 " requires phpactor
 "Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
 
 "Plug 'roxma/ncm-phpactor'
 
 
-Plug 'roxma/nvim-cm-tern', {'do': 'npm install'} "
+"Plug 'roxma/nvim-cm-tern', {'do': 'npm install'} "
 
 
 Plug 'honza/vim-snippets'
@@ -277,9 +271,10 @@ Plug 'apalmer1377/factorus'
 Plug 'chiel92/vim-autoformat'
 Plug 'sbdchd/neoformat'
 
+Plug 'w0rp/ale'
 
 Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
+Plug '	ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'ncm2/ncm2-path'
@@ -292,6 +287,7 @@ Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
 Plug 'ncm2/ncm2-pyclang'
 Plug 'ncm2/ncm2-match-highlight'
 Plug 'ncm2/ncm2-snipmate'
+Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 
 " snipmate dependencies
 Plug 'tomtom/tlib_vim'
@@ -393,8 +389,8 @@ set hidden
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['/home/lsoriano/.nvm/versions/node/v8.11.3/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['/home/lsoriano/.nvm/versions/node/v8.11.3/bin/javascript-typescript-stdio'],
+    \ 'javascript': ['javascript-typescript-langserver'],
+    \ 'javascript.jsx': ['javascript-typescript-langserver'],
     \ 'java': ['java',
     \   '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044',
     \   '-Declipse.application=org.eclipse.jdt.ls.core.id1',
@@ -461,11 +457,6 @@ let g:searchtasks_list=["TODO", "FIXME"]
 "" Map leader to ,
 let mapleader='\'
 
-autocmd Filetype * AnyFoldActivate
-
-let g:anyfold_fold_comments=1
-set foldlevel=0
-colorscheme solarized
 hi Folded term=NONE cterm=NONE
 
 
@@ -491,9 +482,6 @@ function! IPhpInsertUse()
     call PhpInsertUse()
     call feedkeys('a',  'n')
 endfunction
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-
 
 
 "let g:rainbow_active = 1
@@ -585,26 +573,6 @@ augroup END
 let g:lexical#spell = 1 
 
 
-" When writing a buffer.
-call neomake#configure#automake('w')
-" When writing a buffer, and on normal mode changes (after 750ms).
-call neomake#configure#automake('nw', 750)
-" When reading a buffer (after 1s), and when writing.
-call neomake#configure#automake('rw', 1000)
-
-
-set hlsearch
-hi NeomakeErrorDefault  ctermbg=LightYellow
-
-"hi NeomakeErrorDefault ctermfg=Red
-
-let g:neomake_error_sign = { 'text': "x", 'texthl': 'NeomakeErrorDefault' }
-let g:neomake_warning_sign = { 'text': "⚠", 'texthl': 'NeomakeWarningDefault' }
-let g:neomake_informational_sign = { 'text': "\uF05A", 'texthl': 'NeomakeInformationDefault' }
-let g:neomake_message_sign = { 'text': "\uF09A", 'texthl': 'NeomakeMessageDefault' }
-
-
-let g:neomake_javascript_enabled_makers = ['eslint']
 
 
 
@@ -1115,5 +1083,7 @@ nno <silent> ]of :<c-u>call <sid>open_folds('disable')<cr>
 nno <silent> cof :<c-u>call <sid>open_folds(<sid>open_folds('is_active') ? 'disable' : 'enable')<cr>
 
 
+set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
 
+let NERDTreeRespectWildIgnore=1
 
