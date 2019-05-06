@@ -1,3 +1,16 @@
+"guan maikeles
+syntax enable
+
+"deser ocupero para el dia
+"colorscheme desert
+"set background=dark
+
+"materialize claro para la noche
+"set t_Co=256
+"set background=light
+
+
+
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
     if has('nvim')
@@ -12,113 +25,107 @@ endfunction
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-scripts/a.vim'
 
-"Plug 'adoy/vim-php-refactoring-toolbox'
+
+Plug 'pseewald/vim-anyfold'
+
+
+"vericiar tiene de inicio
+"Plug 'tweekmonster/startuptime.vim'
 
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-Plug 'NLKNguyen/papercolor-theme'
-
-Plug 'luochen1990/rainbow'
-
-
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}  
-
-"Plug 'vim-scripts/dbext.vim'
-
-"Plug 'yuratomo/gmail.vim'
-
-Plug 'christoomey/vim-conflicted'
-
-"Plug 'lifepillar/vim-mucomplete'
-
-"Plug 'joonty/vdebug'
-
-"Plug 'megaannum/forms'
-
-"Plug 'megaannum/self'
-
-
-
-
-
-
-"jdb java debug
-"Plug 'Dica-Developer/vim-jdb'
-Plug 'LeonelSoriano/vimHttppie'
-"Plug 'LeonelSoriano/vim-my-dbug'
-
-
-Plug 'chrisbra/colorizer'
-
-Plug 'schickling/vim-bufonly'
-
-Plug 'idanarye/vim-vebugger'
-
-"Plug 'vdesjardins/vim-langclient-java'
-
-"Plug 'yuratomo/dbg.vim'
-
-Plug 'kien/ctrlp.vim'
-
-Plug 'SirVer/ultisnips'
-
-Plug 'ap/vim-css-color'
-
-Plug 'MattesGroeger/vim-bookmarks'
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'altercation/vim-colors-solarized'
-Plug 'ek9/vim-auto-solarize'
-
-
-Plug 'gcmt/taboo.vim'
-
-
-Plug 'mustache/vim-mustache-handlebars'
-
-Plug 'itchyny/calendar.vim'
-
-Plug 'mattn/emmet-vim'
-
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-
-"Plug 'tokorom/clang_complete'
-
-
-Plug 'xolox/vim-session'
-
-
-"Plug 'idanarye/vim-merginal'
-
-"include c++ c objectivec
-"Plug 'xaizek/vim-inccomplete'
-
-
-
+"-> completado
 "Plug 'autozimu/LanguageClient-neovim', {
 "    \ 'branch': 'next',
 "    \ 'do': './install.sh',
-"    \ }
-
-Plug 'xolox/vim-misc'
-
-
-
+"	    \ }
 Plug 'junegunn/fzf'
+	
+Plug 'huawenyu/neogdb.vim'
+
+Plug 'xolox/vim-session'
+
+Plug 'rustushki/JavaImp.vim'
+
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ncm2/ncm2-path'
+"Plug 'ncm2/ncm2-tagprefix'
+
+
+Plug 'tomtom/tlib_vim'
+"Plug 'marcweber/vim-addon-mw-utils'
+"Plug 'garbas/vim-snipmate'
 
 
 
-"Plug 'starcraftman/vim-eclim'
+Plug 'yuki-ycino/ncm2-dictionary'
+Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
+Plug 'ncm2/ncm2-gtags'
+"Plug 'ncm2/ncm2-highprio-pop'
 
-"Plug 'StanAngeloff/php.vim'
+Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+Plug 'ncm2/ncm2-match-highlight'
+"Plug 'ncm2/ncm2-snipmate'
+Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
+"Plug 'ncm2/ncm2-jedi'
+"Plug 'ObserverOfTime/ncm2-jc2', {'for': ['java', 'jsp']}
+"Plug 'artur-shaik/vim-javacomplete2', {'for': ['java', 'jsp']}
+Plug 'ncm2/ncm2-pyclang'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'ncm2/ncm2-neosnippet'
 
 
+Plug 'w0rp/ale'
+
+Plug 'chiel92/vim-autoformat'
+Plug 'sbdchd/neoformat'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
+
+" -> solo c
+"cambia entre h y c
+Plug 'vim-scripts/a.vim'
+
+Plug 'joonty/vdebug'
+
+" -> until
+"para los colores
+Plug 'chrisbra/colorizer'
+Plug 'ap/vim-css-color'
+Plug 'Yggdroot/indentLine'
+Plug 'enricobacis/vim-airline-clock'
+
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+
+Plug 'scrooloose/nerdcommenter'
+
+Plug 'tpope/vim-fugitive'
+Plug 'sodapopcan/vim-twiggy'
+
+
+
+Plug 'andrewradev/splitjoin.vim'
+
+Plug 'mbbill/undotree'
+
+Plug 'chrisbra/vim-diff-enhanced'
+
+Plug 'vim-scripts/TaskList.vim'
+Plug 'gilsondev/searchtasks.vim'
+Plug 'samsonw/vim-task'
+
+Plug 'vim-scripts/grep.vim'
+
+Plug 'deris/devdocs.vim'
+Plug 'Raimondi/delimitMate'
 
 
 "moverse con scrool rapido y en smooth  C-f /C-u
@@ -126,19 +133,47 @@ Plug 'yuttie/comfortable-motion.vim'
 
 
 
-Plug 'DougBeney/pickachu'
+"Plug 'DougBeney/pickachu'
 
 Plug 'majutsushi/tagbar'
-
-
-
-
 
 Plug 'Valloric/MatchTagAlways'
 
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'airblade/vim-gitgutter'
 
+Plug 'itchyny/calendar.vim'
+
+Plug 'mattn/emmet-vim'
+
+Plug 'gcmt/taboo.vim'
+
+Plug 'MattesGroeger/vim-bookmarks'
+
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'kien/ctrlp.vim'
+
+Plug 'schickling/vim-bufonly'
+
+Plug 'LeonelSoriano/vimHttppie'
+Plug 'christoomey/vim-conflicted'
+Plug 'luochen1990/rainbow'
+
+
+Plug 'ntpeters/vim-better-whitespace'
+
+"Plug 'elzr/vim-json'
+
+Plug 'othree/html5.vim'
+
+
+Plug 'powerline/powerline'
+
+"Plug 'eugen0329/vim-esearch'
 
 "para rezise los split con control mas flecha
 Plug 'talek/obvious-resize'
@@ -146,60 +181,27 @@ Plug 'talek/obvious-resize'
 
 
 
+"Plug 'huawenyu/neogdb.vim'
+
+
+
+
+
 "desactiva funciones pesadas para archivos grandes
 Plug 'vim-scripts/LargeFile'
+
+"ramas cambiar por el del trabajo
+Plug 'idanarye/vim-merginal'
+"hisotirial de git
+Plug 'cohama/agit.vim'
 
 
 Plug 'craigemery/vim-autotag'
 Plug 'xolox/vim-notes'
 
 Plug 'christoomey/vim-system-copy'
+Plug 'xolox/vim-misc'
 
-
-
-"para mejor vista de tb
-"Plug 'fweep/vim-tabber'
-
-
-Plug 'airblade/vim-gitgutter'
-
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-
-Plug 'powerline/powerline'
-
-Plug 'eugen0329/vim-esearch'
-
-Plug 'othree/html5.vim'
-
-Plug 'elzr/vim-json'
-
-Plug 'pangloss/vim-javascript'
-
-Plug 'vim-scripts/grep.vim'
-
-Plug 'Raimondi/delimitMate'
-
-Plug 'ntpeters/vim-better-whitespace'
-
-
-"Plug 'artur-shaik/vim-javacomplete2'
-
-"Plug 'pseewald/vim-anyfold'
-
-Plug 'mbbill/undotree'
-
-Plug 'vim-scripts/TaskList.vim'
-Plug 'gilsondev/searchtasks.vim'
-
-Plug 'dracula/vim'
-
-Plug 'Shougo/echodoc.vim'
-
-Plug 'kshenoy/vim-signature'
-Plug 'andrewradev/splitjoin.vim'
-
-
-Plug 'freitass/todo.txt-vim'
 
 "buscar y reemplazar
 Plug 'brooth/far.vim'
@@ -208,189 +210,77 @@ Plug 'thaerkh/vim-indentguides'
 
 Plug 'jistr/vim-nerdtree-tabs'
 
-"Plug 'mikelue/vim-maven-plugin'
 
-Plug 'scrooloose/nerdcommenter'
-
-Plug 'tpope/vim-fugitive'
-
-Plug 'thinca/vim-ref'
-
-"Plug 'ludovicchabant/vim-gutentags.git'
-
-
-Plug 'joegesualdo/jsdoc.vim'
-
-Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-
-
-Plug 'enricobacis/vim-airline-clock'
-
-Plug 'farfanoide/inflector.vim'
-
-Plug 'mikehaertl/pdv-standalone'
-
-"Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-"Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
-"Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
-
-
-
-" requires phpactor
-"Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
-
-"Plug 'roxma/ncm-phpactor'
-
-
-"Plug 'roxma/nvim-cm-tern', {'do': 'npm install'} "
-
-
-Plug 'honza/vim-snippets'
 
 "abre archivos en la ultima posicion
 Plug 'farmergreg/vim-lastplace'
 
-Plug 'Yggdroot/indentLine'
+
+"  TRANFORMA EL TEXT
+Plug 'farfanoide/inflector.vim'
 
 
-Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/vim-js-pretty-template'
+"-> temas
+Plug 'NLKNguyen/papercolor-theme'
 
 
-"theme
-Plug 'rakr/vim-two-firewatch'
-"theme
-Plug 'mkarmona/materialbox'
-
-"php composer
-"Plug 'noahfrederick/vim-composer'
-
-"java refactory
-Plug 'apalmer1377/factorus'
-
-Plug 'chiel92/vim-autoformat'
-Plug 'sbdchd/neoformat'
-
-Plug 'w0rp/ale'
-
-Plug 'roxma/nvim-yarp'
-Plug '	ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-tagprefix'
-Plug 'yuki-ycino/ncm2-dictionary'
-Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
-Plug 'ncm2/ncm2-gtags'
-"Plug 'jsfaint/gen_tags.vim'
-Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-Plug 'ncm2/ncm2-pyclang'
-Plug 'ncm2/ncm2-match-highlight'
-Plug 'ncm2/ncm2-snipmate'
-Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-
-" snipmate dependencies
-Plug 'tomtom/tlib_vim'
-Plug 'marcweber/vim-addon-mw-utils'
-Plug 'garbas/vim-snipmate'
 
 call plug#end()
 
+colorscheme PaperColor
 
-
-" Press enter key to trigger snippet expansion
-" The parameters are the same as `:help feedkeys()`
-inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
-
-" c-j c-k for moving in snippet
-" let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
-let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
-let g:UltiSnipsRemoveSelectModeMappings = 0
-
+  " enable ncm2 for all buffers
     autocmd BufEnter * call ncm2#enable_for_buffer()
+
+    " IMPORTANTE: :help Ncm2PopupOpen for more information
     set completeopt=noinsert,menuone,noselect
-    set shortmess+=c
+let g:autotagTagsFile=".tags"
 
-    au TextChangedI * call ncm2#auto_trigger()
+command! MakeTags !ctags -R  --exclude=.git --exclude=node_modules --exclude=test .
+let g:gdb_keymap_frame_up = ''
 
-    inoremap <c-c> <ESC>
+"autocmd Filetype * AnyFoldActivate
+let g:anyfold_fold_comments=0
+set foldlevel=0
+hi Folded term=NONE cterm=NONE
+autocmd Filetype cpp set foldignore=#/
+let g:anyfold_identify_comments=2
 
-    inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" activate anyfold by default
+augroup anyfold
+    autocmd!
+    autocmd Filetype <filetype> AnyFoldActivate
+augroup END
 
-
-let g:ncm2#match_highlight = 'bold'
-let g:ncm2#match_highlight = 'sans-serif'
-let g:ncm2#match_highlight = 'sans-serif-bold'
-let g:ncm2#match_highlight = 'mono-space'
-
-" default
-let g:ncm2#match_highlight = 'double-struck'
-
-
-
-
-inoremap <silent> <expr> <CR> ncm2_snipmate#expand_or("\<CR>", 'n')
-
-" wrap <Plug>snipMateTrigger so that it works for both completin and normal
-" snippet
-" inoremap <expr> <c-u> ncm2_snipmate#expand_or("\<Plug>snipMateTrigger", "m")
-
-" c-j c-k for moving in snippet
-let g:snips_no_mappings = 1
-vmap <c-j> <Plug>snipMateNextOrTrigger
-vmap <c-k> <Plug>snipMateBack
-imap <expr> <c-k> pumvisible() ? "\<c-y>\<Plug>snipMateBack" : "\<Plug>snipMateBack"
-imap <expr> <c-j> pumvisible() ? "\<c-y>\<Plug>snipMateNextOrTrigger" : "\<Plug>snipMateNextOrTrigger"
-
-
-"""""""""""""""""""""""""""
+" disable anyfold for large files
+let g:LargeFile = 1000000 " file is large if size greater than 1MB
+autocmd BufReadPre,BufRead * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
+function LargeFile()
+    augroup anyfold
+        autocmd! " remove AnyFoldActivate
+        autocmd Filetype <filetype> setlocal foldmethod=indent " fall back to indent folding
+    augroup END
+endfunction
 
 
 
 
 
 
-
-set shell=bash\ -l
-set clipboard=unnamedplus
-
-" for echodoc
-"set noshowmodegutentags
+"NERDTree configuracion
+map <C-n> :NERDTreeToggle<CR>
 
 
-
-set termguicolors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-set spelllang=en_us,es_es
-
-"nmap  :setlocal spell spelllang=es_es<cr>
-"nmap  :setlocal spell spelllang=en_en<cr>
-
-"let g:dbext_default_profile_mySQLServer = 'type=MYSQL:user=root:passwd=123456:dbname=ritta_db'
-"let g:dbext_default_profile = 'mySQLServer'
-
-
-"autocmd VimEnter * DBCompleteTables
-
-
-set runtimepath+=~/.vim-plugins/LanguageClient-neovim
-
-"autocmd FileType php LanguageClientStart
-
-" Automatically start language servers.
-"let g:LanguageClient_autoStart = 1
-
-
-set hidden
-
+" --> LANGUAJE SERVER
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'javascript': ['javascript-typescript-langserver'],
     \ 'javascript.jsx': ['javascript-typescript-langserver'],
+    \ 'html': ['html-languageserver', '--stdio'],
+    \ 'cpp': ['clangd'],
+    \ 'c': ['clangd'],
+    \ 'css': ['css-languageserver', '--stdio'],
+    \ 'perl': ['slp.bin'],
     \ 'java': ['java',
     \   '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044',
     \   '-Declipse.application=org.eclipse.jdt.ls.core.id1',
@@ -400,91 +290,66 @@ let g:LanguageClient_serverCommands = {
     \   '-Dlog.level=ALL',
     \   '-noverify',
     \   '-Xmx1G',
-    \   '-jar', '/home/lsoriano/languaje/plugins/org.eclipse.equinox.launcher_1.4.0.v20161219-1356.jar',
-    \   '-configuration', '/home/lsoriano/languaje/config_linux',
-    \   '-data', '/home/lsoriano/dev/Lol'],
+    \   '-jar', '/home/leonel/languaje/plugins/org.eclipse.equinox.launcher_1.4.0.v20161219-1356.jar',
+    \   '-configuration', '/home/leonel/languaje/config_linux',
+    \   '-data', '/home/leonel/dev/java/robot-extranjeria/main/java/'],
     \ }
 
+ let g:JavaImpPaths =
+    \ $HOME . "/home/leonel/dev/java/ejemplo-java," .
+    \ $HOME . "/home/leonel/.m2/repository"
+
+let g:JavaImpDataDir = $HOME . "/vim/JavaImp"
+
+"let g:LanguageClient_loggingFile = '/tmp/lc.log'
+"let g:LanguageClient_loggingLevel = 'DEBUG'
 
 
-let g:LanguageClient_loggingFile = '/tmp/lc.log'
-let g:LanguageClient_loggingLevel = 'DEBUG'
+nnoremap <F6> :call LanguageClient_contextMenu()<CR>
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+" ncm2 settings
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=menuone,noselect,noinsert
+set shortmess+=c
+inoremap <c-c> 	<ESC>
+" make it fast
+let ncm2#popup_delay = 6
+let ncm2#complete_length = [[4, 4]]
+" Use new fuzzy based matches
+let g:ncm2#matcher = 'substrfuzzy'
 
 
-
-let g:indentguides_spacechar = '┆'
-let g:indentguides_tabchar = '.'
-
-
-"nnoremap <unique> <Leader>rv :call PhpRenameLocalVariable()<CR>
-
-"inoremap <C-Space> <esc>:call LanguageClientRestart()<CR>a
-inoremap <C-@> :call LanguageClientRestart()<CR>
-
-"nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-"nnoremap <silent> gd :call Lan:qnition()<CR>
-"nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-
-
-"let g:vimHttppieBrowser = 0
-
-
-let g:auto_solarize_start_light = '0700'
-let g:auto_solarize_start_dark = '1850'
-let g:auto_solarize_togglebg_key = '<F7>'
-
-
-highlight BookmarkSign ctermbg=NONE ctermfg=90
-"highlight BookmarkLine ctermbg=194 ctermfg=NONE
-let g:bookmark_sign = '♦'
-let g:bookmark_highlight_lines = 0
-
-
-let g:searchtasks_list=["TODO", "FIXME"]
-
-"let g:deoplete#enable_at_startup = 1
-
-"let g:deoplete#omni_patterns = {}
-"let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
-
-"let g:deoplete#file#enable_buffer_path = 1
-"let g:deoplete#omni#functions = {}
-"let g:deoplete#omni#functions.javascript = [
-"  \ 'tern#Complete',
-"  \ 'jspc#omni'
-"\]
-
+	
 "" Map leader to ,
 let mapleader='\'
 
-hi Folded term=NONE cterm=NONE
+"hi Folded term=NONE cterm=NONE
+
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-let NERDTreeChDirMode=2
-map <C-n> :NERDTreeToggle<CR>
-
-function! NERDTreeToggleInCurDir()                                                                                                                                                             
-·   " If NERDTree is open in the current buffer
-·   if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-·   ·   exe ":NERDTreeClose"
-·   else
-·   ·   if (expand("%:t") != '')
-·   ·   ·   exe ":NERDTreeFind"
-·   ·   else
-·   ·   ·   exe ":NERDTreeToggle"
-·   ·   endif
-·   endif
-endfunction
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-
-
-"let g:rainbow_active = 1
 
 let g:rainbow_conf = {
 \	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
@@ -523,27 +388,53 @@ let g:rainbow_conf = {
 \}
 
 
-"para resize de windows
-noremap <silent> <C-Up> :<C-U>ObviousResizeUp<CR>
-noremap <silent> <C-Down> :<C-U>ObviousResizeDown<CR>
-noremap <silent> <C-Left> :<C-U>ObviousResizeLeft<CR>
-noremap <silent> <C-Right> :<C-U>ObviousResizeRight<CR>
+
+highlight DiffAdd    cterm=NONE ctermfg=0 ctermbg=22
+highlight DiffDelete cterm=NONE ctermfg=0 ctermbg=52
+highlight DiffChange cterm=NONE ctermfg=0 ctermbg=23
+highlight DiffText   cterm=NONE ctermfg=0 ctermbg=23
+
+noremap <A-k> :wincmd k<cr>
+noremap <A-j> :wincmd j<cr>
+noremap <A-h> :wincmd h<cr>
+noremap <A-l> :wincmd l<cr>
 
 
 
 
 
-let g:gmail_imap = 'imap.gmail.com:993'
+let g:ale_linters = {'c': ['gcc', 'clang'], 'cpp': ['gcc' , 'clang']}
 
-let g:gmail_smtp = 'smtp.gmail.com:465'
+if exists("g:ale_enabled")
+	let g:ale_c_clang_options = "-DHAVE_CONFIG_H -Wall -Wextra -std=ansi -pedantic"
+	let g:ale_c_gcc_options = "-DHAVE_CONFIG_H -Wall -Wextra -std=ansi -pedantic"
 
-let g:gmail_user_name = 'xxx@gmail.com'
+	" Sets or appends pkg-config cflags to g:ale_c_gcc_options and
+	" ale_c_clang_options. Takes a list as argument.
+	function! SetProjectCflags(pkgDeps)
+		let new_list = deepcopy(a:pkgDeps)
+		call map(new_list, {_, val -> systemlist('pkg-config --cflags ' . val)[0] })
+		let cflags = join(new_list, ' ')
+		let g:ale_c_clang_options .= ' ' . cflags
+		let g:ale_c_gcc_options .= ' ' . cflags
+	endfunction
 
-"call gmail#imap#set_password('xxxxxx')
+	call SetProjectCflags(["glib-2.0",
+		\ "gtk+-3.0",
+		\ "x11",
+		\ "alsa",
+		\ "libnotify"])
+endif
 
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_fixers = {'javascript': ['prettier'], 'scss': ['stylelint'], 'python': ['yapf', 'isort']}
+let g:ale_set_highlights = 1
+let g:ale_set_signs = 1
+let g:ale_sign_column_always = 1
 
-let g:vdebug_options = {}
-let g:vdebug_options["port"] = 9000
 
 
 " Set to auto read when a file is changed from the outside
@@ -557,11 +448,6 @@ set nocompatible
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
-
-
-"nnoremap <C-K> :call PhpDocSingle()<CR>
-"vnoremap <C-K> :call PhpDocRange()<CR>
-
 
 
 augroup lexical
@@ -582,10 +468,6 @@ if has("persistent_undo")
 endif
 
 
-
-let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
-nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
-
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -596,36 +478,29 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 
 "linea 80
 if exists('+colorcolumn')
-  set colorcolumn=100
+  set colorcolumn=80
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>120v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80.\+', -1)
 endif
-let g:UltiSnipsEditSplit="vertical"
 
+"inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 
-let g:auto_solarize_check_on_save = 0
+" c-j c-k for moving in snippet
+"let g:UltiSnipsExpandTrigger		= "<tab>"
+"let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+"let g:UltiSnipsRemoveSelectModeMappings = 0
 
-
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"let g:snips_no_mappings = 1
+"vmap <c-k> <Plug>snipMateBack
+"imap <expr> <c-k> pumvisible() ? "\<c-y>\<Plug>snipMateBack" : "\<Plug>snipMateBack"
+"imap <expr> <c-j> pumvisible() ? "\<c-y>\<Plug>snipMateNextOrTrigger" : "\<Plug>snipMateNextOrTrigger"
 
 
 set nu
-
-
-
-" mover hacia delante y hacia atras por tab
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
-
 " Turn on the WiLd menu
 set wildmenu
+
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -634,7 +509,7 @@ set wildignore=*.o,*~,*.pyc
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -667,10 +542,10 @@ set showmatch
 set mat=2
 
 " No annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
+"set noerrorbells
+"set novisualbell
+"set t_vb=
+"set tm=500
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -678,15 +553,6 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
-
-"deser ocupero para el dia
-"colorscheme desert
-"set background=dark
-
-"materialize claro para la noche
-set t_Co=256   
-set background=light
-
 
 
 
@@ -762,7 +628,7 @@ map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
 map <C-j> <C-W>j
-map <C-k> <C-W>k
+"map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
@@ -772,11 +638,16 @@ map <leader>bd :Bclose<cr>
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
 
+
+
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
+
+
+
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -886,6 +757,7 @@ map <leader>sa zg
 map <leader>s? z=
 
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -897,6 +769,8 @@ map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
+
+
 
 
 
@@ -961,7 +835,7 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 
-"esto es para el plogin de tagbar
+"esto es para el plugin de tagbar
 nmap <C-l> :TagbarToggle<CR>
 
 
@@ -1000,7 +874,6 @@ let g:NERDTrimTrailingWhitespace = 1
 set guioptions-=e
 
 
-set sessionoptions+=tabpages,globals
 
 
 noremap <silent> <C-S>          :wa<CR>
@@ -1010,6 +883,37 @@ inoremap <silent> <C-S>         <C-O>:wa<CR>
 noremap <silent> <A-t>          :tabnew<CR>
 vnoremap <silent> <A-t>         <C-C>:tabnew<CR>
 inoremap <silent> <A-t>        <C-O>:tabnew<CR>
+
+noremap <silent> <A-f>          :tabp<CR>
+vnoremap <silent> <A-f>         <C-C>:tabp<CR>
+inoremap <silent> <A-f>        <C-O>:tabp<CR>
+
+
+noremap <silent> <A-g>          :tabn<CR>
+vnoremap <silent> <A-g>         <C-C>:tabn<CR>
+inoremap <silent> <C-g>        <C-O>:tabn<CR>
+
+
+
+"para resize de windows
+
+noremap <silent> <A-Up>          :ObviousResizeUp<CR>
+vnoremap <silent> <A-Up>         <C-C>:ObviousResizeUp<CR>
+inoremap <silent> <A-Up>        <C-O>:ObviousResizeUp<CR>
+
+
+noremap <silent> <A-Down>          :ObviousResizeDown<CR>
+vnoremap <silent> <A-Down>         <C-C>:ObviousResizeDown<CR>
+inoremap <silent> <A-Down>        <C-O>:ObviousResizeDown<CR>
+
+noremap <silent> <A-Left>          :ObviousResizeLeft<CR>
+vnoremap <silent> <A-Left>         <C-C>:ObviousResizeLeft<CR>
+inoremap <silent> <A-Left>        <C-O>:ObviousResizeLeft<CR>
+
+noremap <silent> <A-Right>          :ObviousResizeRight<CR>
+vnoremap <silent> <A-Right>         <C-C>:ObviousResizeRight<CR>
+inoremap <silent> <A-Right>        <C-O>:ObviousResizeRight<CR>
+
 
 
 
@@ -1064,26 +968,70 @@ endif
 set tabline=%!tabber#TabLine()
 
 
+set shell=bash\ -l
+set clipboard=unnamedplus
+
 
 :au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 autocmd BufWinEnter,WinEnter term://* startinsert
 tnoremap <ESC> <C-\><C-n>:buffer #<CR>
 
+
+
+
 set encoding=UTF-8
-
-colors PaperColor
-
 set cursorline 
-
-let g:tern_show_signature_in_pum = 1
-let g:tern_show_argument_hints = 'on_move'
-
-nno <silent> [of :<c-u>call <sid>open_folds('enable')<cr>
-nno <silent> ]of :<c-u>call <sid>open_folds('disable')<cr>
-nno <silent> cof :<c-u>call <sid>open_folds(<sid>open_folds('is_active') ? 'disable' : 'enable')<cr>
-
 
 set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
 
 let NERDTreeRespectWildIgnore=1
+
+
+set sessionoptions=buffers,curdir,folds,options,tabpages,winsize
+function! Mksession()
+	"let path = 'session' . fnamemodify(bufname('%'),':p')
+	let l:path =  'session' . fnamemodify(resolve(expand('<sfile>:p')), ':h')
+	let l:name_session = substitute(l:path, "/", "-", "g")
+	exe  "mksession! " . $HOME . "/.vim/sessions/" . l:name_session . ".vim"
+endfunction
+command Mksession call Mksession()
+
+
+function! MksessionLoad()
+	let l:path =  'session' . fnamemodify(resolve(expand('<sfile>:p')), ':h')
+	let l:name_session = substitute(l:path, "/", "-", "g")
+	let l:session_path = $HOME . "/.vim/sessions/" . l:name_session . ".vim"
+	if filereadable(l:session_path)
+	    exe  "source " . $HOME . "/.vim/sessions/" . l:name_session . ".vim"
+	endif
+endfunction
+command MksessionLoad call MksessionLoad()
+
+augroup mksession_auto
+  autocmd!
+"  au VimEnter * nested call MksessionLoad()
+"  au VimLeavePre * call Mksession()
+augroup END
+
+
+" #########################################################
+" # A way to delete 'mkview'
+function! MyDeleteView()
+	let path = fnamemodify(bufname('%'),':p')
+	" vim's odd =~ escaping for /
+	let path = substitute(path, '=', '==', 'g')
+	if empty($HOME)
+	else
+		let path = substitute(path, '^'.$HOME, '\~', '')
+	endif
+	let path = substitute(path, '/', '=+', 'g') . '='
+	" view directory
+	let path = &viewdir.'/'.path
+	call delete(path)
+	echo "Deleted: ".path
+endfunction
+command Delview call MyDeleteView()
+" Lower-case user commands: http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
+cabbrev delview <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Delview' : 'delview')<CR>
+
 
