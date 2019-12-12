@@ -1,4 +1,3 @@
-"guan maikeles
 syntax enable
 
 "deser ocupero para el dia
@@ -27,7 +26,12 @@ call plug#begin('~/.vim/plugged')
 
 
 
+Plug 'pangloss/vim-javascript'
+"Plug 'jparise/vim-graphql'
+"debug
+"Plug 'puremourning/vimspector'
 Plug 'pseewald/vim-anyfold'
+Plug 'leafgarland/typescript-vim'
 
 
 "vericiar tiene de inicio
@@ -38,63 +42,41 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 "-> completado
 "Plug 'autozimu/LanguageClient-neovim', {
-"    \ 'branch': 'next',
-"    \ 'do': './install.sh',
-"	    \ }
+""    \ 'branch': 'next',
+""    \ 'do': './install.sh',
+""	    \ }
 Plug 'junegunn/fzf'
-	
-Plug 'huawenyu/neogdb.vim'
+
 
 Plug 'xolox/vim-session'
 
-Plug 'rustushki/JavaImp.vim'
 
 Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-ultisnips'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'ncm2/ncm2-path'
-"Plug 'ncm2/ncm2-tagprefix'
 
 
 Plug 'tomtom/tlib_vim'
-"Plug 'marcweber/vim-addon-mw-utils'
-"Plug 'garbas/vim-snipmate'
+Plug 'marcweber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
 
 
 
-Plug 'yuki-ycino/ncm2-dictionary'
-Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
-Plug 'ncm2/ncm2-gtags'
-"Plug 'ncm2/ncm2-highprio-pop'
-
-Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-Plug 'ncm2/ncm2-match-highlight'
-"Plug 'ncm2/ncm2-snipmate'
-Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-"Plug 'ncm2/ncm2-jedi'
-"Plug 'ObserverOfTime/ncm2-jc2', {'for': ['java', 'jsp']}
-"Plug 'artur-shaik/vim-javacomplete2', {'for': ['java', 'jsp']}
-Plug 'ncm2/ncm2-pyclang'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'ncm2/ncm2-neosnippet'
 
 
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 
-Plug 'chiel92/vim-autoformat'
-Plug 'sbdchd/neoformat'
+"Plug 'chiel92/vim-autoformat'
+"Plug 'sbdchd/neoformat'
+"
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-
-
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+Plug 'Shougo/echodoc.vim'
 " -> solo c
 "cambia entre h y c
 Plug 'vim-scripts/a.vim'
 
-Plug 'joonty/vdebug'
+"Plug 'joonty/vdebug'
 
 " -> until
 "para los colores
@@ -107,6 +89,9 @@ Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 
 Plug 'scrooloose/nerdcommenter'
 
+"git
+
+"Plug 'neoclide/vim-easygit'
 Plug 'tpope/vim-fugitive'
 Plug 'sodapopcan/vim-twiggy'
 
@@ -118,13 +103,16 @@ Plug 'mbbill/undotree'
 
 Plug 'chrisbra/vim-diff-enhanced'
 
-Plug 'vim-scripts/TaskList.vim'
+" Plug 'vim-scripts/TaskList.vim'
 Plug 'gilsondev/searchtasks.vim'
-Plug 'samsonw/vim-task'
+"Plug 'samsonw/vim-task'
+Plug 'Shougo/denite.nvim'
+Plug 'chemzqm/denite-extra'
+Plug 'chemzqm/todoapp.vim'
 
 Plug 'vim-scripts/grep.vim'
 
-Plug 'deris/devdocs.vim'
+Plug 'romainl/vim-devdocs'
 Plug 'Raimondi/delimitMate'
 
 
@@ -134,8 +122,9 @@ Plug 'yuttie/comfortable-motion.vim'
 
 
 "Plug 'DougBeney/pickachu'
+Plug 'KabbAmine/vCoolor.vim'
 
-Plug 'majutsushi/tagbar'
+
 
 Plug 'Valloric/MatchTagAlways'
 
@@ -151,6 +140,7 @@ Plug 'gcmt/taboo.vim'
 
 Plug 'MattesGroeger/vim-bookmarks'
 
+Plug 'liuchengxu/vista.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -162,7 +152,6 @@ Plug 'schickling/vim-bufonly'
 Plug 'LeonelSoriano/vimHttppie'
 Plug 'christoomey/vim-conflicted'
 Plug 'luochen1990/rainbow'
-
 
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -223,17 +212,14 @@ Plug 'farfanoide/inflector.vim'
 "-> temas
 Plug 'NLKNguyen/papercolor-theme'
 
-
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 call plug#end()
 
 colorscheme PaperColor
+let g:easygit_enable_command = 1
 
-  " enable ncm2 for all buffers
-    autocmd BufEnter * call ncm2#enable_for_buffer()
-
-    " IMPORTANTE: :help Ncm2PopupOpen for more information
-    set completeopt=noinsert,menuone,noselect
 let g:autotagTagsFile=".tags"
 
 command! MakeTags !ctags -R  --exclude=.git --exclude=node_modules --exclude=test .
@@ -269,7 +255,7 @@ endfunction
 
 "NERDTree configuracion
 map <C-n> :NERDTreeToggle<CR>
-
+nmap gt :Vista!!<CR>
 
 " --> LANGUAJE SERVER
 let g:LanguageClient_serverCommands = {
@@ -299,28 +285,23 @@ let g:LanguageClient_serverCommands = {
     \ $HOME . "/home/leonel/dev/java/ejemplo-java," .
     \ $HOME . "/home/leonel/.m2/repository"
 
-let g:JavaImpDataDir = $HOME . "/vim/JavaImp"
+
+
+
+"let g:JavaImpDataDir = $HOME . '/vim/JavaImp'
 
 "let g:LanguageClient_loggingFile = '/tmp/lc.log'
 "let g:LanguageClient_loggingLevel = 'DEBUG'
 
 
-nnoremap <F6> :call LanguageClient_contextMenu()<CR>
+"nnoremap <F6> :call LanguageClient_contextMenu()<CR>
 
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+"nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+"nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+"nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
-" ncm2 settings
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=menuone,noselect,noinsert
 set shortmess+=c
 inoremap <c-c> 	<ESC>
-" make it fast
-let ncm2#popup_delay = 6
-let ncm2#complete_length = [[4, 4]]
-" Use new fuzzy based matches
-let g:ncm2#matcher = 'substrfuzzy'
 
 
 	
@@ -328,21 +309,6 @@ let g:ncm2#matcher = 'substrfuzzy'
 let mapleader='\'
 
 "hi Folded term=NONE cterm=NONE
-
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
@@ -403,40 +369,6 @@ noremap <A-l> :wincmd l<cr>
 
 
 
-let g:ale_linters = {'c': ['gcc', 'clang'], 'cpp': ['gcc' , 'clang']}
-
-if exists("g:ale_enabled")
-	let g:ale_c_clang_options = "-DHAVE_CONFIG_H -Wall -Wextra -std=ansi -pedantic"
-	let g:ale_c_gcc_options = "-DHAVE_CONFIG_H -Wall -Wextra -std=ansi -pedantic"
-
-	" Sets or appends pkg-config cflags to g:ale_c_gcc_options and
-	" ale_c_clang_options. Takes a list as argument.
-	function! SetProjectCflags(pkgDeps)
-		let new_list = deepcopy(a:pkgDeps)
-		call map(new_list, {_, val -> systemlist('pkg-config --cflags ' . val)[0] })
-		let cflags = join(new_list, ' ')
-		let g:ale_c_clang_options .= ' ' . cflags
-		let g:ale_c_gcc_options .= ' ' . cflags
-	endfunction
-
-	call SetProjectCflags(["glib-2.0",
-		\ "gtk+-3.0",
-		\ "x11",
-		\ "alsa",
-		\ "libnotify"])
-endif
-
-let g:airline#extensions#ale#enabled = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_fixers = {'javascript': ['prettier'], 'scss': ['stylelint'], 'python': ['yapf', 'isort']}
-let g:ale_set_highlights = 1
-let g:ale_set_signs = 1
-let g:ale_sign_column_always = 1
-
-
-
 " Set to auto read when a file is changed from the outside
 "set autoread
 
@@ -483,13 +415,12 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80.\+', -1)
 endif
 
-"inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 
 " c-j c-k for moving in snippet
-"let g:UltiSnipsExpandTrigger		= "<tab>"
-"let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
-"let g:UltiSnipsRemoveSelectModeMappings = 0
+let g:UltiSnipsExpandTrigger		= "<tab>"
+let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+let g:UltiSnipsRemoveSelectModeMappings = 0
 
 "let g:snips_no_mappings = 1
 "vmap <c-k> <Plug>snipMateBack
@@ -835,8 +766,6 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 
-"esto es para el plugin de tagbar
-nmap <C-l> :TagbarToggle<CR>
 
 
 "este es para lo busqueda en archivos
@@ -880,20 +809,8 @@ noremap <silent> <C-S>          :wa<CR>
 vnoremap <silent> <C-S>         <C-C>:wa<CR>
 inoremap <silent> <C-S>         <C-O>:wa<CR>
 
-noremap <silent> <A-t>          :tabnew<CR>
-vnoremap <silent> <A-t>         <C-C>:tabnew<CR>
-inoremap <silent> <A-t>        <C-O>:tabnew<CR>
-
-noremap <silent> <A-f>          :tabp<CR>
-vnoremap <silent> <A-f>         <C-C>:tabp<CR>
-inoremap <silent> <A-f>        <C-O>:tabp<CR>
-
-
-noremap <silent> <A-g>          :tabn<CR>
-vnoremap <silent> <A-g>         <C-C>:tabn<CR>
-inoremap <silent> <C-g>        <C-O>:tabn<CR>
-
-
+nnoremap <S-n> :tabprevious<CR>
+nnoremap <S-m> :tabnext<CR>
 
 "para resize de windows
 
@@ -937,36 +854,51 @@ endif
 if !exists('g:airline_powerline_fonts')
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline_left_sep          = '▶'
-  let g:airline_left_alt_sep      = '»'
-  let g:airline_right_sep         = '◀'
-  let g:airline_right_alt_sep     = '«'
-  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-  let g:airline#extensions#readonly#symbol   = '⊘'
-  let g:airline#extensions#linecolumn#prefix = '¶'
-  let g:airline#extensions#paste#symbol      = 'ρ'
-  let g:airline_symbols.linenr    = '␊'
-  let g:airline_symbols.branch    = '⎇'
-  let g:airline_symbols.paste     = 'ρ'
-  let g:airline_symbols.paste     = 'Þ'
-  let g:airline_symbols.paste     = '∥'
-  let g:airline_symbols.whitespace = 'Ξ'
-else
-  let g:airline#extensions#tabline#left_sep = ''
-  let g:airline#extensions#tabline#left_alt_sep = ''
+    let g:airline_left_sep = '»'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '«'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.crypt = '🔒'
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.maxlinenr = ''
+    let g:airline_symbols.maxlinenr = '㏑'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.spell = 'Ꞩ'
+    let g:airline_symbols.notexists = 'Ɇ'
+    let g:airline_symbols.whitespace = 'Ξ'
 
-  " powerline symbols
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = ''
+
+else
+  let g:airline#extensions#tabline#left_sep = ' '
+  let g:airline#extensions#tabline#left_alt_sep = '|'
+    let g:airline_left_sep = '»'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '«'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.crypt = '🔒'
+    let g:airline_symbols.linenr = '☰'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.maxlinenr = ''
+    let g:airline_symbols.maxlinenr = '㏑'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.spell = 'Ꞩ'
+    let g:airline_symbols.notexists = 'Ɇ'
+    let g:airline_symbols.whitespace = 'Ξ'
 endif
 
 set tabline=%!tabber#TabLine()
-
+let g:airline#extensions#tabline#enabled = 0
 
 set shell=bash\ -l
 set clipboard=unnamedplus
@@ -1034,4 +966,168 @@ command Delview call MyDeleteView()
 " Lower-case user commands: http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
 cabbrev delview <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Delview' : 'delview')<CR>
 
+
+set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[c` and `]c` to navigate diagnostics
+"nmap <silent> [c <Plug>(coc-diagnostic-prev)
+"nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+let g:session_autosave = 'no'
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+
+" Add diagnostic info for https://github.com/itchyny/lightline.vim
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'cocstatus': 'coc#status'
+      \ },
+      \ }
+
+
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+let g:vista#executives = ['coc', 'ctags', 'lcn', 'vim_lsp']
+let g:vista_executive_for = {'typescript': 'coc', 'go': 'coc', 'c': 'coc', 'javascript': 'coc', 'html': 'coc', 'rust': 'coc', 'cpp': 'coc', 'css': 'coc', 'python': 'coc'}
+let g:vista_sidebar_width = 50
 
