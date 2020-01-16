@@ -25,8 +25,15 @@ endfunction
 call plug#begin('~/.vim/plugged')
 
 
+Plug 'peitalin/vim-jsx-typescript'
+
+Plug 'mxw/vim-jsx'
+
+Plug 'khzaw/vim-conceal'
+
 
 Plug 'pangloss/vim-javascript'
+
 "Plug 'jparise/vim-graphql'
 "debug
 "Plug 'puremourning/vimspector'
@@ -253,58 +260,22 @@ endfunction
 
 
 
+
+
 "NERDTree configuracion
 map <C-n> :NERDTreeToggle<CR>
 nmap gt :Vista!!<CR>
 
-" --> LANGUAJE SERVER
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['javascript-typescript-langserver'],
-    \ 'javascript.jsx': ['javascript-typescript-langserver'],
-    \ 'html': ['html-languageserver', '--stdio'],
-    \ 'cpp': ['clangd'],
-    \ 'c': ['clangd'],
-    \ 'css': ['css-languageserver', '--stdio'],
-    \ 'perl': ['slp.bin'],
-    \ 'java': ['java',
-    \   '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044',
-    \   '-Declipse.application=org.eclipse.jdt.ls.core.id1',
-    \   '-Dosgi.bundles.defaultStartLevel=4',
-    \   '-Declipse.product=org.eclipse.jdt.ls.core.product',
-    \   '-Dlog.protocol=true',
-    \   '-Dlog.level=ALL',
-    \   '-noverify',
-    \   '-Xmx1G',
-    \   '-jar', '/home/leonel/languaje/plugins/org.eclipse.equinox.launcher_1.4.0.v20161219-1356.jar',
-    \   '-configuration', '/home/leonel/languaje/config_linux',
-    \   '-data', '/home/leonel/dev/java/robot-extranjeria/main/java/'],
-    \ }
-
- let g:JavaImpPaths =
-    \ $HOME . "/home/leonel/dev/java/ejemplo-java," .
-    \ $HOME . "/home/leonel/.m2/repository"
 
 
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 
-
-"let g:JavaImpDataDir = $HOME . '/vim/JavaImp'
-
-"let g:LanguageClient_loggingFile = '/tmp/lc.log'
-"let g:LanguageClient_loggingLevel = 'DEBUG'
-
-
-"nnoremap <F6> :call LanguageClient_contextMenu()<CR>
-
-"nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-"nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-"nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 set shortmess+=c
 inoremap <c-c> 	<ESC>
 
 
-	
 "" Map leader to ,
 let mapleader='\'
 
@@ -1130,4 +1101,3 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 let g:vista#executives = ['coc', 'ctags', 'lcn', 'vim_lsp']
 let g:vista_executive_for = {'typescript': 'coc', 'go': 'coc', 'c': 'coc', 'javascript': 'coc', 'html': 'coc', 'rust': 'coc', 'cpp': 'coc', 'css': 'coc', 'python': 'coc'}
 let g:vista_sidebar_width = 50
-
