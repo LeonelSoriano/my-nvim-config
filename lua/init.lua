@@ -33,6 +33,7 @@ function on_attach_callback(client, bufnr)
   require('diagnostic').on_attach()
   require('completion').on_attach()
   require('folding').on_attach()
+
 end
 
 -- require('auto-session').setup()

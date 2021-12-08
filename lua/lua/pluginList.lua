@@ -58,9 +58,12 @@ return packer.startup(
     -- use "pechorin/any-jump.vim"
     use "neovim/nvim-lspconfig"
 
-    use "kabouzeid/nvim-lspinstall"
+
     --debug
 
+     use {
+	'williamboman/nvim-lsp-installer',
+    }
 
     use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
 
