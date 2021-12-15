@@ -107,7 +107,7 @@ O = {
     hidden_files = true,
     wrap_lines = false,
     number = true,
-    relative_number = true,
+    relative_number = false,
     shell = 'bash',
 	timeoutlen = 100,
     nvim_tree_disable_netrw = 0,
@@ -119,7 +119,7 @@ O = {
         ignore_install = {"haskell"},
         highlight = {enabled = true},
         playground = {enabled = true},
-        rainbow = {enabled = false}
+        rainbow = {enabled = true}
     },
 
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},

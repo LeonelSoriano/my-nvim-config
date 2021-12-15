@@ -9,7 +9,6 @@ require "defaults"
 
 vim.opt.termguicolors = true
 
-require("lspkind").init()
 require("nvim-autopairs").setup()
 require('spellsitter').setup()
 
@@ -68,7 +67,18 @@ require('lsp.kotlin-ls')
 require('lsp.yaml-ls')
 -- require('lsp.elixir-ls')
 
-
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+	max_lines = 1000;
+	max_num_results = 20;
+	sort = true;
+	run_on_every_keystroke = true;
+	snippet_placeholder = '..';
+	ignored_file_types = { -- default is not to ignore
+		-- uncomment to ignore in lua:
+		-- lua = true
+	};
+})
 
 local dap, dapui = require('dap'), require('dapui')                                                                                                
 dap.listeners.after.event_initialized['dapui_config'] = function() dapui.open() end                                                                

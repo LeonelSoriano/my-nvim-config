@@ -49,14 +49,41 @@ return packer.startup(
 
     use 'MattesGroeger/vim-bookmarks'
 
-    use "hrsh7th/cmp-nvim-lsp"
-    use "hrsh7th/cmp-buffer"
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-vsnip"
-    use "hrsh7th/vim-vsnip"
+
+    
     use "rafamadriz/friendly-snippets"
     -- use "pechorin/any-jump.vim"
     use "neovim/nvim-lspconfig"
+    
+    
+    use { "tzachar/cmp-tabnine", run = "./install.sh" }
+    
+    use {
+      "hrsh7th/nvim-cmp",
+      requires = {
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-nvim-lsp",
+        "quangnguyen30192/cmp-nvim-ultisnips",
+        "hrsh7th/cmp-nvim-lua",
+        "octaltree/cmp-look",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-calc",
+        "f3fora/cmp-spell",
+        "hrsh7th/cmp-emoji",
+        "ray-x/cmp-treesitter",
+        "hrsh7th/cmp-cmdline",
+        "hrsh7th/cmp-nvim-lsp-document-symbol",
+        "hrsh7th/vim-vsnip",
+        "hrsh7th/cmp-vsnip"
+      },
+      config = function()
+        require("config.cmp").setup()
+      end,
+    }
+    
+    
+    
+    
 
 
     --debug
